@@ -1,0 +1,12 @@
+wandb
+lmdb
+regex
+ftfy
+loguru
+pycocotools
+matplotlib
+tqdm
+fvcore
+einops
+opencv-python-headless
+pyarrow==10.0.0

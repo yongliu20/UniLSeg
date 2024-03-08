@@ -1,0 +1,23 @@
+Model:
+  # Base Arch
+  clip_pretrain: pretrain/ViT-B-16.pt
+  swin_pretrain: pretrain/swin_base_patch4_window7_224_22k.pth
+  aux_loss: True
+  input_size: 480
+  word_len: 17
+  word_dim: 1024
+  vis_dim: 512
+  # Pre-Fusion
+  fusion_dim: 1024
+  # Vision Path
+  pixel_decoder_in: [128,256,512,1024]
+  pixel_decoder_conv: 512
+  pixel_decoder_mask: 256
+  # Language Path
+  num_enc: 0
+  num_dec: 6
+  visual_in: 1024
+  text_in: 512
+  d_model: 256
+  # Model Path
+  model_dir: UniLSeg20_no_finetune.pth

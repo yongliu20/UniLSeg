@@ -1,13 +1,7 @@
-
-
-
-
-
-
 # Universal Segmentation at Arbitrary Granularity with Language Instruction
 Yong Liu, Cairong Zhang, Yitong Wang, Jiahao Wang, Yujiu Yang, Yansong Tang
 
-The repository contains the official implementation of "Universal Segmentation at Arbitrary Granularity with Language Instruction"
+The repository contains the official implementation of "Universal Segmentation at Arbitrary Granularity with Language Instruction"[CVPR 2024]
 
 [Paper](https://arxiv.org/abs/2312.01623)
 
@@ -43,19 +37,51 @@ For training UniLSeg, we reorganize a group of tasks from original diverse distr
  <img src="imgs/pipeline.png" width="100%">
 </p>
 
-## 📖 Visualization
-<p align="center">
- <img src="imgs/results-1.png" width="100%">
-</p>
-<p align="center">
- <img src="imgs/results-2.png" width="100%">
-</p>
 
-## 📖 Results
-<p align="center">
- <img src="imgs/results-3.png" width="100%">
-</p>
+We have open-sourced the general inference code and UniLSeg-20 model weights (w/o finetuned on specified task dataset). If you find any bugs due to carelessness on our part in organizing the code, feel free to contact us and point that!
 
-## 🎤🎤🎤 Todo
 
-- [ ] Release the code and checkpoint
+
+
+
+
+
+### Installation
+Install required packages. 
+
+```bash
+conda create -n UniLSeg python=3.7
+conda activate UniLSeg
+conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge -y
+pip install -r requirements.txt
+```
+
+
+
+### Usage
+
+- #### Pretrained Weight
+  We have provided the pretrained UniLSeg-20 model weights (w/o finetuned on specified task dataset) and other pre-trained backbone weights. Please download them from [here](https://drive.google.com/drive/folders/1llKmPaOUhsAqxtopFdfnIBAlspvw_I4I?usp=drive_link) and put them under the current path. 
+
+
+
+#### General Inference 
+You can run the general inference by the following command:
+
+  ```
+ python general_inference.py  --img <IMG_PATH> --exp <'EXPRESSION'> --sp <MASK_SAVE_PATH>
+  ```
+
+
+
+### Cite 
+
+If you find our work helpful, we'd appreciate it if you could cite our paper in your work.
+```
+@article{liu2023universal,
+  title={Universal Segmentation at Arbitrary Granularity with Language Instruction},
+  author={Liu, Yong and Zhang, Cairong and Wang, Yitong and Wang, Jiahao and Yang, Yujiu and Tang, Yansong},
+  journal={arXiv preprint arXiv:2312.01623},
+  year={2023}
+}
+```
